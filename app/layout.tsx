@@ -4,6 +4,7 @@ import { Analytics } from '@vercel/analytics/next'
 import './globals.css'
 import { POSProvider } from './context/POSContext'
 import { Toaster } from '@/components/ui/sonner'
+import SignOutButton from '@/components/SignOutButton'
 
 const _geist = Geist({ subsets: ["latin"] });
 const _geistMono = Geist_Mono({ subsets: ["latin"] });
@@ -40,6 +41,9 @@ export default function RootLayout({
     <html lang="en" className="bg-slate-50">
       <body className="font-sans antialiased bg-slate-50">
         <POSProvider>
+          <div className="w-full flex justify-end items-center p-2">
+            <SignOutButton />
+          </div>
           {children}
         </POSProvider>
         <Toaster />
